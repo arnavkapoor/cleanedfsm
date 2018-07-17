@@ -1,0 +1,337 @@
+SANITY CHECK!
+FSM_INPUTS_WITH_OFFSETS = 0
+FSM_INPUTS_COAL_CHAR = 1
+FSM_INPUTS_COAL_CHAR4 = 0
+
+Device: Tesla K40m 
+Compute units: 15 
+Work-group size: 1024 
+Local memory size (in bytes): 49152 
+Global memory size (in bytes): 11996954624 
+Global memory cache size (in bytes): 245760 
+Version: OpenCL 1.2 CUDA 
+Number of test cases: 1537024
+chunk: 0	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 1	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 2	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 3	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 4	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 5	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 6	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 7	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 8	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 9	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 10	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 11	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 12	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 13	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 14	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 15	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 16	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 17	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 18	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 19	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 20	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 21	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 22	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 23	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 24	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 25	 num tests: 10240	 size: 143360	 padded input size: 14
+chunk: 26	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 27	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 28	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 29	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 30	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 31	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 32	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 33	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 34	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 35	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 36	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 37	 num tests: 10240	 size: 133120	 padded input size: 13
+chunk: 38	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 39	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 40	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 41	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 42	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 43	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 44	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 45	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 46	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 47	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 48	 num tests: 11264	 size: 135168	 padded input size: 12
+chunk: 49	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 50	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 51	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 52	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 53	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 54	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 55	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 56	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 57	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 58	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 59	 num tests: 12288	 size: 135168	 padded input size: 11
+chunk: 60	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 61	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 62	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 63	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 64	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 65	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 66	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 67	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 68	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 69	 num tests: 13312	 size: 133120	 padded input size: 10
+chunk: 70	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 71	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 72	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 73	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 74	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 75	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 76	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 77	 num tests: 15360	 size: 138240	 padded input size: 9
+chunk: 78	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 79	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 80	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 81	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 82	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 83	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 84	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 85	 num tests: 16384	 size: 131072	 padded input size: 8
+chunk: 86	 num tests: 19456	 size: 136192	 padded input size: 7
+chunk: 87	 num tests: 19456	 size: 136192	 padded input size: 7
+chunk: 88	 num tests: 19456	 size: 136192	 padded input size: 7
+chunk: 89	 num tests: 19456	 size: 136192	 padded input size: 7
+chunk: 90	 num tests: 19456	 size: 136192	 padded input size: 7
+chunk: 91	 num tests: 19456	 size: 136192	 padded input size: 7
+chunk: 92	 num tests: 19456	 size: 136192	 padded input size: 7
+chunk: 93	 num tests: 22528	 size: 135168	 padded input size: 6
+chunk: 94	 num tests: 22528	 size: 135168	 padded input size: 6
+chunk: 95	 num tests: 22528	 size: 135168	 padded input size: 6
+chunk: 96	 num tests: 22528	 size: 135168	 padded input size: 6
+chunk: 97	 num tests: 22528	 size: 135168	 padded input size: 6
+chunk: 98	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 99	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 100	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 101	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 102	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 103	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 104	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 105	 num tests: 26624	 size: 133120	 padded input size: 5
+chunk: 106	 num tests: 32768	 size: 131072	 padded input size: 4
+chunk: 107	 num tests: 7168	 size: 28672	 padded input size: 4
+Reading fsm: /afs/inf.ed.ac.uk/user/v/v1akapoo/fsmresults/newbeginning/network/allregexnew/rtp.fsm
+Size of FSM with 6074 transitions is 29696 bytes.
+Size of 1537024 test inputs is 14638080 bytes.
+Size of 1537024 test results is 14638080 bytes.
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+LDIM = 256, chunks = 108
+FSM in CONST memory.
+Time in ms
+trans-inputs	trans-results	exec-kernel	time-total
+1.567328	1.543776	3.439840	23.717875
+1.572480	1.526144	2.859904	13.709317
+1.558816	1.533696	2.830368	13.874142
+1.572608	1.531776	2.843712	19.042200
+1.562368	1.531104	2.833536	16.811534
+1.565056	1.535392	2.843072	16.128065
+1.558784	1.535456	2.827840	16.399957
+1.564640	1.530688	2.845376	16.075544
+1.598560	1.534432	2.846112	13.471227
+1.626464	1.542400	2.840224	13.782650
+1.618816	1.532480	2.838592	13.703938
+1.628896	1.536000	2.826720	13.704008
+1.621184	1.531584	2.854080	13.680821
+1.617856	1.537120	2.827744	13.605532
+1.568512	1.534880	2.852608	16.078268
+1.568672	1.537760	2.848448	15.997253
+1.559360	1.542304	2.827040	16.253989
+1.592352	1.526464	2.834976	13.457118
+1.618464	1.544000	2.839360	13.775806
+1.622112	1.525696	2.821984	13.590586
+1.569984	1.550528	2.846880	17.137553
+1.563136	1.545536	2.837344	19.037869
+1.557824	1.539840	2.841728	38.221846
+1.559072	1.531904	2.839712	15.876287
+1.570080	1.537952	2.835808	15.943404
+1.566816	1.535392	2.823616	15.721588
+1.556800	1.535520	2.846208	16.105367
+1.559840	1.530624	2.817824	16.035944
+1.563328	1.530368	2.845824	16.279342
+1.562784	1.530784	2.849088	16.414066
+1.562656	1.530816	2.839264	16.305672
+1.563584	1.534720	2.835104	16.210338
+1.574016	1.546528	2.843456	16.191202
+1.566016	1.552672	2.825856	15.766496
+1.558336	1.530816	2.838464	16.145945
+1.563904	1.542784	2.823168	16.192459
+1.616032	1.553056	2.851136	13.512922
+1.611360	1.531072	2.855744	13.452439
+1.626624	1.538560	2.839680	13.790822
+1.623104	1.536544	2.841568	13.736764
+1.630240	1.530304	2.833408	13.545468
+1.589824	1.525920	2.815040	13.542465
+1.625824	1.526560	2.819520	13.527868
+1.622848	1.531520	2.825056	13.686898
+1.617120	1.546624	2.821728	13.673139
+1.602560	1.552928	2.832992	13.727754
+1.622880	1.539072	2.840640	13.711482
+1.611296	1.536224	2.834272	13.763862
+1.630176	1.526528	2.838048	13.640383
+1.610592	1.525824	2.846976	13.661894
+1.598144	1.537120	2.836480	13.538205
+1.632512	1.531424	2.834400	13.663849
+1.609120	1.537248	2.844032	13.736484
+1.621984	1.526240	2.836512	13.647088
+1.606592	1.532288	2.830112	13.422129
+1.601632	1.531264	2.822880	13.479677
+1.621824	1.543168	2.833088	13.971432
+1.623008	1.536512	2.827616	13.684033
+1.560512	1.536800	2.837472	16.336403
+1.560448	1.538848	2.855104	16.069817
+1.574304	1.551840	2.818048	15.916725
+1.628160	1.534912	2.827296	13.495881
+1.563648	1.546880	2.843328	15.921055
+1.568416	1.526880	2.853728	16.241767
+1.607072	1.529760	2.829792	13.712739
+1.624800	1.532736	2.840672	13.763514
+1.593536	1.539072	2.833792	13.710015
+1.626112	1.531488	2.828224	13.556713
+1.619168	1.531520	2.822784	13.619850
+1.598016	1.531648	2.819872	13.523119
+1.562848	1.526400	2.852800	16.109627
+1.561312	1.526912	2.852992	16.184986
+1.594752	1.529344	2.815072	13.478002
+1.573536	1.526112	2.827712	16.156700
+1.616512	1.525792	2.821248	13.420522
+1.567360	1.544992	2.839552	32.636417
+1.595584	1.528480	2.833408	15.273694
+1.594560	1.531456	2.824032	15.187371
+1.609984	1.530240	2.844384	15.071364
+1.607200	1.527648	2.854272	14.132136
+1.569760	1.703840	2.853376	19.054562
+1.562688	1.716032	2.833216	19.015729
+1.561600	1.736608	2.852608	18.650110
+1.564736	1.750784	2.839520	18.597519
+1.560800	1.729536	2.874624	19.112250
+1.646208	1.550976	2.853440	13.723075
+1.605312	1.525888	2.827680	13.736694
+1.606944	1.527200	2.847584	14.213432
+1.593280	1.526272	2.844320	14.034359
+1.609760	1.528256	2.851552	14.449845
+1.570688	1.624256	2.847904	18.067422
+1.571264	1.527264	2.824448	16.921394
+1.566240	1.540768	2.846048	15.853728
+1.575776	1.530176	2.834528	16.154396
+1.559712	1.530016	2.823296	16.106694
+1.571264	1.530304	2.830400	16.241977
+1.562848	1.541088	2.825056	16.047818
+1.559104	1.536128	2.814560	15.554178
+1.557472	1.530240	2.848512	16.214249
+1.584480	1.541472	2.832800	15.805886
+1.556864	1.535648	2.823424	16.329628
