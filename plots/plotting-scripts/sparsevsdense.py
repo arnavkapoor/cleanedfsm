@@ -15,7 +15,7 @@ names = ['padded','with-offset','padded-transposed','padded unsorted','with-offs
 mplt.rc('xtick', labelsize=30) 
 mplt.rc('ytick', labelsize=30) 
 
-basepath = sys.argv[1]
+basepath = sys.argv[1] + '/'
 
 char1densegpu = []
 char1sparsegpu = []

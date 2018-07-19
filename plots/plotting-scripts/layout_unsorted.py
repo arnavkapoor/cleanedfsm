@@ -21,7 +21,7 @@ mplt.rc('ytick', labelsize=30)
 
 #char1cpu = []
 #char1gpu = []
-basefolder = sys.argv[1]
+basefolder = sys.argv[1] + '/'
 for folder, sub_folders, files in os.walk(basefolder+'unsorted/'+'padded-transposed/'):
     for special_file in files:
         file_path = os.path.join(folder, special_file)

@@ -29,7 +29,7 @@ maxpaddedsort = []
 offsetsort = []
 char1sort = []
 
-basefolder = sys.argv[1]
+basefolder = sys.argv[1] + '/'
 bmklist = []
 
 for filename in neededfiles:
