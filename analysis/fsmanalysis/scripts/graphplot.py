@@ -36,8 +36,6 @@ for folder, sub_folders, files in os.walk(path):
         plt.xlabel('States',  fontsize=10)
 
         plt.title(bmk,fontsize=15)
-        manager = plt.get_current_fig_manager()
-        manager.resize(*manager.window.maxsize())
         plt.show()
         #plt.savefig(bmk+'.pdf') // to save directly
         plt.close()
