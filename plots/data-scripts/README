@@ -1,0 +1,6 @@
+consolidated.py - takes the raw cpu and gpu data as input parameters respectively and generates csv files corresponding to both.
+
+mergecsv.py - takes the csv files created previously and generates and consolidated file called mergednetwork
+
+
+splitcsv.py - takes a parameter which is where to save data.( save it in ../data-generated/..rest of the path) . It reads the mergednetwork file and splits each benchmark seperately.

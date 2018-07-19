@@ -16,20 +16,22 @@ for folder, sub_folders, files in os.walk(path):
         file_path = os.path.join(folder, special_file)
         print(file_path)
         df = pd.read_csv(file_path)
-        testcases=(df['Percentage Transitions'].values.tolist())
+        values=(df['Percentage Transitions'].values.tolist())
         bmk = file_path.split('/')[-1]
         bmk = bmk.split('.')[0]
         print(bmk)
-        testcases.sort()
+        values.sort()
+        for i in range(0,len(values)):
+            values[i] = values[i] * 100
         summ=0
-        for i in range(0,len(testcases)):
-            summ+=testcases[i]
+        for i in range(0,len(values)):
+            summ+=values[i]
         try:
-            print((summ*100/len(testcases)),filename)
+            print((summ*100/len(values)),filename)
         except:
             pass
-        x = [i for i in range(1,len(testcases)+1)]
-        plt.bar(x,testcases,align='center')
+        x = [i for i in range(1,len(values)+1)]
+        plt.bar(x,values,align='center')
         plt.ylabel('Transition Percentage', fontsize=10)
         plt.xlabel('States',  fontsize=10)
 
