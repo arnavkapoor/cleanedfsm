@@ -1,6 +1,10 @@
 import os,csv,sys
 path = sys.argv[1] #directory having cpuresults
 path2 = sys.argv[2] #directory having gpuresults
+value_taken = sys.argv[3]
+
+
+
 
 file = csv.writer(open('cpuresultsnetwork.csv', 'w'))
 
@@ -19,8 +23,11 @@ for folder, sub_folders, files in os.walk(path):
                    pass    
             special_file=special_file.split('_')        
             time.sort()
-            file.writerow([special_file[2],special_file[0],special_file[1],time[1]])
-
+            if(value_taken == "0"):
+                file.writerow([special_file[2],special_file[0],special_file[1],time[0]])
+            else
+                file.writerow([special_file[2],special_file[0],special_file[1],time[count//2]])
+                
 file2 = csv.writer(open('gpuresultsnetwork.csv', 'w'))
 
 for folder, sub_folders, files in os.walk(path2):
@@ -46,4 +53,7 @@ for folder, sub_folders, files in os.walk(path2):
             special_file=special_file.split('_')  
             totaltime.sort()
             exectime.sort()
-            file2.writerow([special_file[1],special_file[0],exectime[count//2],totaltime[count//2]])
+            if(value_taken == "0"):
+                file2.writerow([special_file[1],special_file[0],exectime[0],totaltime[0]])
+            else:    
+                file2.writerow([special_file[1],special_file[0],exectime[count//2],totaltime[count//2]])
