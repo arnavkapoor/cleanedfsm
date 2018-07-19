@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 
-neededfiles = ['aim.fsm','battlefield2.fsm','counterstrike-source.fsm','halflife2-deathmatch.fsm','dns.fsm','h323.fsm','hotline.fsm','ntp.fsm','rtp.fsm','ssl.fsm','tsp.fsm','yahoo.fsm']
+neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','halflife2-deathmatch.test','dns.test','h323.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
 
 plt.rc('legend',**{'fontsize':30})
 
@@ -33,12 +33,12 @@ basefolder = sys.argv[1]
 bmklist = []
 
 for filename in neededfiles:
-    df1 = pd.read_csv(basefolder+'unsorted/'+'padded/'+filename+'.csv')
-    df2 = pd.read_csv(basefolder+'unsorted/'+'padded-transposed/'+filename+'.csv')
+    df1 = pd.read_csv(basefolder+'unsorted/'+'padded-transposed/'+filename+'.csv')
+    df2 = pd.read_csv(basefolder+'unsorted/'+'padded/'+filename+'.csv')
     df3 = pd.read_csv(basefolder+'unsorted/'+'with-offsets/'+filename+'.csv')
    
-    df4 = pd.read_csv(basefolder+'sorted/'+'padded/'+filename+'.csv')
-    df5 = pd.read_csv(basefolder+'sorted/'+'padded-transposed/'+filename+'.csv')
+    df4 = pd.read_csv(basefolder+'sorted/'+'padded-transposed/'+filename+'.csv')
+    df5 = pd.read_csv(basefolder+'sorted/'+'padded/'+filename+'.csv')
     df6 = pd.read_csv(basefolder+'sorted/'+'with-offsets/'+filename+'.csv')
     
     #df7 = pd.read_csv('./individualcsvcpusortedminimum/'+filename+'.csv')
@@ -60,7 +60,7 @@ for filename in neededfiles:
   
 
   #--- sorted part--- #
-    cpuchar1 = (df1['Total Time'].values.tolist()[1]) #same cpu as unsorted as no changes to cpu speeds due to sorting in smaller test-cases
+    cpuchar1 = (df1['Total CPU'].values.tolist()[1]) #same cpu as unsorted as no changes to cpu speeds due to sorting in smaller test-cases
     cpumaxpadded = (df5['Total CPU'].values.tolist()[1])
     cpuoffset = (df3['Total CPU'].values.tolist()[1])
    
