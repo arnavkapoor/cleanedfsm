@@ -6,8 +6,17 @@ import math
 import numpy as np
 import pandas as pd
 import matplotlib as mplt
+import sys,os
+import math
+import numpy as np
+import pandas as pd
+import matplotlib as mplt
 import itertools
 import matplotlib.pyplot as plt 
+
+mplt.rcParams['ps.useafm'] = True
+mplt.rcParams['pdf.use14corefonts'] = True
+mplt.rcParams['text.usetex'] = True
 
 mplt.rc('xtick', labelsize=30) 
 mplt.rc('ytick', labelsize=30) 
