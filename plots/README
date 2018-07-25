@@ -1,9 +1,0 @@
-data-scripts generates the csv files from the raw data , 
-the master-script inside data-scripts folder takes 4 parameters 
-the first is the cpu raw result  
-the second is the gpu raw result. 
-the third is 0 or 1 (0 is for minimum and 1 is for median)
-
-The fourth is the path to where to save the generated csv, This is the data generation folder which has a similar directory structure to the raw result directory but now contains the consolidated csv's
-
-The plotting-scripts use the csv's of this data generated folder
