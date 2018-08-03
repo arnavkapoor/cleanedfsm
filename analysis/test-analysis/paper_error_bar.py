@@ -10,6 +10,11 @@ import itertools
 #import matplotlib
 import matplotlib.pyplot as plt 
 from matplotlib import rcParams
+
+rcParams['ps.useafm'] = True
+rcParams['pdf.use14corefonts'] = True
+rcParams['text.usetex'] = True
+
 rcParams.update({'figure.autolayout': True})
 #matplotlib.tightlayout()
 df = pd.read_csv('./fsmstats.csv')
