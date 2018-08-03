@@ -11,6 +11,10 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 
+mplt.rcParams['ps.useafm'] = True
+mplt.rcParams['pdf.use14corefonts'] = True
+mplt.rcParams['text.usetex'] = True
+
 neededfiles = []
 names = ['padded','padded-transposed','with-offsets']
 mplt.rc('xtick', labelsize=30) 

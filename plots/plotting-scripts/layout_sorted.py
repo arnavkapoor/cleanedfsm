@@ -11,6 +11,10 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 
+mplt.rcParams['ps.useafm'] = True
+mplt.rcParams['pdf.use14corefonts'] = True
+mplt.rcParams['text.usetex'] = True
+
 neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','halflife2-deathmatch.test','dns.test','h323.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
 
 plt.rc('legend',**{'fontsize':30})

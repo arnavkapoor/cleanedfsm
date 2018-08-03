@@ -9,6 +9,11 @@ import matplotlib as mplt
 import itertools
 import matplotlib.pyplot as plt 
 from matplotlib import rcParams
+
+mplt.rcParams['ps.useafm'] = True
+mplt.rcParams['pdf.use14corefonts'] = True
+mplt.rcParams['text.usetex'] = True
+
 rcParams.update({'figure.autolayout': True})
 neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','dns.test','h323.test','halflife2-deathmatch.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
 names = ['padded','with-offset','padded-transposed','padded unsorted','with-offset unsorted','padded-transposed unsorted']
