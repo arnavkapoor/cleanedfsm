@@ -2,7 +2,7 @@
 # import plotly.graph_objs as go
 # import plotly.figure_factory as FF
 
-import math
+import math, sys
 import numpy as np
 import pandas as pd
 import matplotlib as mplt
@@ -17,7 +17,10 @@ rcParams['text.usetex'] = True
 
 rcParams.update({'figure.autolayout': True})
 #matplotlib.tightlayout()
-df = pd.read_csv('./fsmstats.csv')
+
+fsmfile = sys.argv[1] # the csv file which contains the test case analysis for the FSMs
+
+df = pd.read_csv(fsmfile)
 mplt.rc('xtick', labelsize=40) 
 mplt.rc('ytick', labelsize=40) 
 
@@ -38,7 +41,7 @@ fsm,avgall,stderr=zip(*zippedsorted)
 
 fig,ax=plt.subplots()
 ax.set_xticklabels(fsm,rotation=30,fontsize=30)
-plt.ylabel("Average Test Length",fontsize=40)
+#plt.ylabel("Average Test Length",fontsize=40)
 plt.errorbar(fsm, avgall, stderr, linestyle='None', marker='^', capsize=10,markersize=25) 
 #plt.tight_layout()
 

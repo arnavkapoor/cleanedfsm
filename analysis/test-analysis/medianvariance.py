@@ -8,13 +8,16 @@ import pandas as pd
 import matplotlib as mplt
 import itertools
 import matplotlib.pyplot as plt 
-csvresults = sys.argv[1]
-file = csv.writer(open("fsmstats.csv",'w'))
+
+csvresultsdir = sys.argv[1]
+fsmfilenamecsv = sys.argv[2]
+
+file = csv.writer(open(fsmfilenamecsv,'w'))
 file.writerow(['FSM', 'Median', 'Standard Deviation' ,'Variance','Average all','Total all'])        
 
-for filename in os.listdir(csvresults):
+for filename in os.listdir(csvresultsdir):
     
-    df = pd.read_csv(os.path.join(csvresults,filename))
+    df = pd.read_csv(os.path.join(csvresultsdir,filename))
 
     freq =df['Number'].values.tolist()
     val = df['Length'].values.tolist()
