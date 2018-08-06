@@ -41,7 +41,7 @@ fsm,avgall,stderr=zip(*zippedsorted)
 
 fig,ax=plt.subplots()
 ax.set_xticklabels(fsm,rotation=30,fontsize=30)
-#plt.ylabel("Average Test Length",fontsize=40)
+plt.ylabel("Average Test Length",fontsize=40)
 plt.errorbar(fsm, avgall, stderr, linestyle='None', marker='^', capsize=10,markersize=25) 
 #plt.tight_layout()
 
