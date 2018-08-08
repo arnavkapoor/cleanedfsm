@@ -20,6 +20,7 @@ for file in os.listdir(rawfsm):
     
     numtransitions = len(fsm)
     for elements in fsm:
+        # CAREFUL: Assumes that state enumeration starts from 1
         numstates = max(numstates,int(elements[1]),int(elements[2]))
         if(elements[0] == "\\"):
             elements[0]= r'\\'
