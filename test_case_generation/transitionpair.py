@@ -7,7 +7,7 @@ with open(sys.argv[1], 'r') as myfile1: # the fsm file
 namefile=(sys.argv[1].rsplit('/',1)[1])
 fsm=[]
 
-filewrite = open(os.path.join('./transition-pairs-network',namefile),"w")
+filewrite = open(os.path.join('./transition_pairs',namefile),"w")
 
 
 for i in range(0,len(fsmdata)):
