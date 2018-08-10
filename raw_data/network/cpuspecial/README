@@ -1,0 +1,3 @@
+python mergecpuresults ../denseresults/sorted
+
+The code goes in inside the denseresults/sorted folder and finds all cputestresultsnetwork (except the with-offsets) and merges them with minimum of each
