@@ -1,0 +1,6 @@
+python mergecpuresults ../denseresults/sorted
+bash movescript.sh 
+
+The code goes in inside the denseresults/sorted folder and finds all cputestresultsnetwork (except the with-offsets) and merges them with minimum value taken
+
+the bashscript moves the csv files in a folder and also renames halflife2-deathmatch and counterstrike-source to halflife2 and counterstrike respectively
