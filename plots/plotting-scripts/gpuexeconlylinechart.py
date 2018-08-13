@@ -6,11 +6,6 @@ import math
 import numpy as np
 import pandas as pd
 import matplotlib as mplt
-import sys,os
-import math
-import numpy as np
-import pandas as pd
-import matplotlib as mplt
 import itertools
 import matplotlib.pyplot as plt 
 
