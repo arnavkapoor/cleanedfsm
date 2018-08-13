@@ -26,8 +26,8 @@ sortingpoints = []
 fig, ax = plt.subplots()
 ax.set_xscale('log', basex=2,subsx=(2,3,4,5,6,7,8,9,10))  
 
-path = sys.argv[1]
-path2 = sys.argv[2] #path to the cpuminimumsorted folder
+path = sys.argv[1] # path to gpu results, must contain .csv file for each bmrk
+path2 = sys.argv[2] # path to cpu results, must contain .csv file for each bmrk
 
 for folder, sub_folders, files in os.walk(path):
     for special_file in files:
@@ -36,7 +36,7 @@ for folder, sub_folders, files in os.walk(path):
         bmk = bmk.split('-')[0]
         
         df = pd.read_csv(file_path)
-        df2 = pd.read_csv(path2+bmk+".csv")
+        df2 = pd.read_csv(path2+"/"+bmk+".csv")
         
         testcases=(df['Testcases'].drop_duplicates().values.tolist())
         totalcpu = (df2['Total CPU'].values.tolist())
