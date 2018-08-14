@@ -1,6 +1,3 @@
-# import plotly.plotly as py
-# import plotly.graph_objs as go
-# import plotly.figure_factory as FF
 import sys,os
 import math
 import numpy as np
@@ -26,27 +23,22 @@ sortingpoints = []
 fig, ax = plt.subplots()
 ax.set_xscale('log', basex=2,subsx=(2,3,4,5,6,7,8,9,10))  
 
-path = sys.argv[1] # path to gpu results, must contain .csv file for each bmrk
-path2 = sys.argv[2] # path to cpu results, must contain .csv file for each bmrk
+path = sys.argv[1]
 
 for folder, sub_folders, files in os.walk(path):
     for special_file in files:
         file_path = os.path.join(folder, special_file)
-        bmk = special_file.split('.')[0]
-        bmk = bmk.split('-')[0]
-        
         df = pd.read_csv(file_path)
-        df2 = pd.read_csv(path2+"/"+bmk+".csv")
-        
         testcases=(df['Testcases'].drop_duplicates().values.tolist())
-        totalcpu = (df2['Total CPU'].values.tolist())
+        totalcpu = (df['Total CPU'].values.tolist())
 
   
         totalcpu32=[]
         totalcpu16=[]
         totalcpu8=[]
         totalcpu1=[]
-       
+        bmk = special_file.split('.')[0]
+        bmk = bmk.split('-')[0]
         
         
         for i in range(0,len(totalcpu)):
