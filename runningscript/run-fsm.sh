@@ -50,7 +50,7 @@ do
   mkdir -p "$cpuresults/$basenm"
   mkdir -p "$gpuresults/$basenm"
 
-  test_sizes=( 2048 4096 8192 16384 32768 65536 131072 262144 524288 104576 2097152 4194304 )
+  test_sizes=( 2048 4096 8192 16384 32768 65536 131072 262144 524288 1048576 2097152 4194304 )
 
   for size in "${test_sizes[@]}"
   do
@@ -67,11 +67,11 @@ do
         echo "CORRECT!" 
         echo "Running experiments for $basenm ${size}..."
         # run cpu results
-        filesavecpu="$size_16_"$noextension".test"
+        filesavecpu=""$size"_16_"$noextension".test"
         bash "$partecldir/build/openmp-run.sh" $size Y N 201 16 $file $do_sort > "$cpuresults/$basenm/$filesavecpu" 2>>$output_file
 
         # run gpu results
-        filesavegpu="$size_"$noextension".test"
+        filesavegpu=""$size"_"$noextension".test"
         "$partecldir/build/gpu-test" $size -time Y -results N -runs 201 -sort $do_sort -ldim 256 -filename $file > "$gpuresults/$basenm/$filesavegpu" 2>> $output_file
         echo "DONE!"
       fi
