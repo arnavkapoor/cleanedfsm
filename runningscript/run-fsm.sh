@@ -5,11 +5,12 @@ char=$3 #values 0 or 1
 do_sort=$4 # values N or Y
 cpuresults="$resultsdir/cpu"
 gpuresults="$resultsdir/gpu"
+output_file=run.out
 
 # inputs
-subjectroot=~/fsmtesting/cleanedfsm/subjects
+subjectroot=~/fsmtesting/cleanedfsm/subjects/network
 testroot=~/fsmtesting/cleanedfsm/test_case_generation/transition_pair_tests
-maxlengthsroot=~/fsmtesting/cleanedfsm/runningscript/maxlengths
+maxlengthsroot=~/fsmtesting/cleanedfsm/runningscript/maxlengths/
 
 partecldir=~/partecl-runtime
 
@@ -21,17 +22,15 @@ do
 
   # get the fsm attributes
   no_of_transitions=$((`cat "$file" | wc -l` - 5))
-  no_of_states=`cat "$file" | head -3 | tail -1 | cut -d " " -f2`
+  no_of_states=$((`cat "$file" | head -3 | tail -1 | cut -d " " -f2` + 1))
   input=$((`cat "$file" | head -1 | cut -d " " -f 2` + 1))
   output=$((`cat "$file" | head -2 | tail -1 | cut -d " " -f 2` + 1))
   max_test_length=`cat "$maxlengthsroot/$basenm"`
-  echo $max_test_length
 
   # copy the tests
-  echo "copying tests $basenm"
+  echo "Copy tests $basenm."
   cp "$testroot/$basenm" "$partecldir/kernel-gen/tests.txt"
   no_of_tests=`cat "$partecldir/kernel-gen/tests.txt" | wc -l`
-  echo $no_of_tests
 
   # set the constants
   sed -i "/#define INPUT_LENFTH_FSM /s/.*/#define INPUT_LENGTH_FSM ${input}/" "$partecldir/kernel-gen/compile_const.h"
@@ -43,27 +42,40 @@ do
   echo "//blank comment" >> "$partecldir/source/main-working.cl"
 
   # build
-  echo "building $basenm"
-  make -C "$partecldir/build" clean
-  make -C "$partecldir/build"
+  echo "Build $basenm."
+  make -C "$partecldir/build" clean &>> $output_file
+  make -C "$partecldir/build" &>> $output_file
 
   # make cpu and gpu dirs
   mkdir -p "$cpuresults/$basenm"
   mkdir -p "$gpuresults/$basenm"
 
-  if [ 2048 -le $no_of_tests ] 
-  then
-    # check correctness
+  test_sizes=( 2048 4096 8192 16384 32768 65536 131072 262144 524288 104576 2097152 4194304 )
 
+  for size in "${test_sizes[@]}"
+  do
+    if [ $size -le $no_of_tests ] 
+    then
+      # check correctness
+      echo "Checking results for $basenm ${size}..."
+      is_correct=$(bash "$partecldir/scripts/compare-correctness.sh" $size $file 16 $do_sort 0 N)
     
-    # run cpu results
-    filesavecpu="2048_16_"$noextension".test"
-    bash "$partecldir/build/openmp-run.sh" 2048 Y N 201 16 $file $do_sort > "$cpuresults/$basenm/$filesavecpu"
+      if [ "$is_correct" == "-1" ]
+      then
+        echo "NOT CORRECT!"
+      else
+        echo "CORRECT!" 
+        echo "Running experiments for $basenm ${size}..."
+        # run cpu results
+        filesavecpu="$size_16_"$noextension".test"
+        bash "$partecldir/build/openmp-run.sh" $size Y N 201 16 $file $do_sort > "$cpuresults/$basenm/$filesavecpu" 2>>$output_file
 
-    # run gpu results
-    filesavegpu="2048_"$noextension".test"
-    "$partecldir/build/gpu-test" 2048 -time Y -results N -runs 201 -sort $do_sort -ldim 256 -filename $file > "$gpuresults/$basenm/$filesavegpu"
-
-  fi
-
+        # run gpu results
+        filesavegpu="$size_"$noextension".test"
+        "$partecldir/build/gpu-test" $size -time Y -results N -runs 201 -sort $do_sort -ldim 256 -filename $file > "$gpuresults/$basenm/$filesavegpu" 2>> $output_file
+        echo "DONE!"
+      fi
+    fi
+  done
+  echo -e "\n"
 done
