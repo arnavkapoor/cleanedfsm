@@ -3,7 +3,7 @@
 # padded-transposed 0 1
 # with-offsets 1 0
 
-base_folder="~/fsmtesting/cleanedfsm/raw_data/201808/denseresults"
+base_folder="$HOME/fsmtesting/cleanedfsm/raw_data/201808/denseresults"
 
 mkdir -p $base_folder
 
