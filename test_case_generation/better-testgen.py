@@ -18,7 +18,7 @@ for elements in prefixlist:
         prefixdict[elements[0]]=""
 
 namefile=(sys.argv[1].rsplit('/',1)[1])
-filewrite= open(os.path.join('./transition-pair-tests-network',namefile),"w")
+filewrite= open(os.path.join('./transition_pair_tests',namefile),"w")
 count = 1
 with open(sys.argv[1], 'r') as myfile1: # the fsm file
     for line in myfile1:

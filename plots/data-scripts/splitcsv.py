@@ -19,7 +19,7 @@ for i in range(1,len(rowsall)-1):
 	else:
 		a1.append(rowsall[i])
 		name=rowsall[i][0]
-		file = csv.writer(open(foldertosave+name+".csv",'w'))
+		file = csv.writer(open(foldertosave + "/" +name+".csv",'w'))
 		file.writerow(['FSM', 'Testcases', 'Cores' ,'Total CPU' , 'Execution GPU', 'Total GPU']),
 		for elements in a1:
 			print(elements) 

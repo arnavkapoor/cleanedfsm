@@ -11,7 +11,7 @@ for i in range(0,len(fsmdata)):
     fsm.append(fsmdata[i].strip().split())
 
 namefile=(sys.argv[1].rsplit('/',1)[1])
-filewrite= open(os.path.join("./prefix-list-network",namefile),"w")
+filewrite= open(os.path.join("./prefix_list",namefile),"w")
 #filewrite1= open(os.path.join('/home/arnav/fsm/tests/opensrcexpanded',namefile),"w")
 
 print(namefile)

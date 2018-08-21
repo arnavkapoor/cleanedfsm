@@ -1,5 +1,6 @@
 .~*
 .__*
-prefix-list-network/
-transition-pair-tests-network/
-transition-pairs-network/
+prefix_list/
+transition_pair_tests/
+transition_pairs/
+maxlengths/
