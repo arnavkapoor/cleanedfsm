@@ -10,9 +10,9 @@ import itertools
 import matplotlib.pyplot as plt 
 from matplotlib import rcParams
 
-mplt.rcParams['ps.useafm'] = True
-mplt.rcParams['pdf.use14corefonts'] = True
-mplt.rcParams['text.usetex'] = True
+# mplt.rcParams['ps.useafm'] = True
+# mplt.rcParams['pdf.use14corefonts'] = True
+# mplt.rcParams['text.usetex'] = True
 
 rcParams.update({'figure.autolayout': True})
 neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','dns.test','h323.test','halflife2-deathmatch.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
@@ -30,8 +30,8 @@ totalgpu = []
 
 
 for filename in neededfiles:
-    df1 = pd.read_csv(basepath+'sparseresults/'+filename+'.csv')
-    df2 = pd.read_csv(basepath+'denseresults/unsorted/padded/'+filename+'.csv')
+    df1 = pd.read_csv(basepath+'sparseresultsmedianvalues/'+filename+'.csv')
+    df2 = pd.read_csv(basepath+'denseresults/unsorted/paddedmedian/'+filename+'.csv')
     
     sparsecpuchar1_16 = (df1['Total CPU'].values.tolist()[1])
     sparsegpuchar1 = (df1['Execution GPU'].drop_duplicates().values.tolist()[0])   
