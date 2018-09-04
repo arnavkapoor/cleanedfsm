@@ -31,7 +31,7 @@ for folder, sub_folders, files in os.walk(path):
         df = pd.read_csv(file_path)
         testcases=(df['Testcases'].drop_duplicates().values.tolist())
         totalcpu = (df['Total CPU'].values.tolist())
-
+        cores = (df['Cores'].values.tolist())
   
         totalcpu32=[]
         totalcpu16=[]
@@ -40,15 +40,14 @@ for folder, sub_folders, files in os.walk(path):
         bmk = special_file.split('.')[0]
         bmk = bmk.split('-')[0]
         
-        
         for i in range(0,len(totalcpu)):
-            if(i%4==0):
+            if(cores[i]==32):
                 totalcpu32.append(totalcpu[i])
-            if(i%4==1): 
+            if(cores[i]==16):
                 totalcpu16.append(totalcpu[i])
-            if(i%4==2):
+            if(cores[i]==8):
                 totalcpu8.append(totalcpu[i])
-            if(i%4==3):
+            if(cores[i]==1):
                 totalcpu1.append(totalcpu[i])
 
         myindices = []
@@ -57,12 +56,12 @@ for folder, sub_folders, files in os.walk(path):
         totalgpupre = (df['Total GPU'].values.tolist())
         
         for i in range(0,len(executiongpupre)):
-            if i%4 == 0:
+            if(cores[i]==16):
                 myindices.append(i)
 
         executiongpu  = [ executiongpupre[i] for i in myindices ]  
         totalgpu  = [ totalgpupre[i] for i in myindices ]       
-        print(len(totalcpu1),len(executiongpu))
+        print(len(executiongpu), bmk)
         for i in range(0,len(executiongpu)):
             executiongpu[i] = totalcpu16[i]/executiongpu[i]
         print(executiongpu[0],bmk)    
