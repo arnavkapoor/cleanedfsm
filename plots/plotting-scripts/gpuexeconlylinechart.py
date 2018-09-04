@@ -78,12 +78,12 @@ for folder, sub_folders, files in os.walk(path):
 print(total/12)
 
 #plt.ticklabel_format(style = 'plain',labelsize=20)
-plt.ylabel('Speed up compared to 16-core CPU',fontsize=35)
-plt.xlabel('Number of tests (log base 2)',fontsize=35)
+plt.ylabel('Speedup compared to 16-core CPU',fontsize=40)
+plt.xlabel('Number of tests (log base 2)',fontsize=40)
 #plt.xticks([np])    #sort the labels/handles by the sorting points
 sortingpoints, labels, handles = zip(*sorted(zip(sortingpoints, labels, handles), key=lambda t: t[0], reverse=True))
     #set the legend
-plt.legend(loc = 2, fontsize = 25, labels=labels, handles=handles,fancybox=True, framealpha=0.2)
+plt.legend(loc = 2, fontsize = 30, labels=labels, handles=handles,fancybox=True, framealpha=0.2)
 #plt.title(bmk,fontsize=15)
 #manager = plt.get_current_fig_manager()
 #manager.resize(*manager.window.maxsize())

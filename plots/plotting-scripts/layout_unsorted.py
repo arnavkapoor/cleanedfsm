@@ -76,11 +76,11 @@ p3 = ax.bar(ind+2*width,offsetnosort, width, color='#888888',hatch='//')
 ax.set_yticks(np.arange(1,9,step=1))
 
 ax.set_xticks(ind + width)
-ax.set_xticklabels(bmklist,rotation=28,fontsize=28)
-ax.legend((p1[0], p2[0],p3[0]), (names),fontsize=35)
+ax.set_xticklabels(bmklist,rotation=28,fontsize=35)
+ax.legend((p1[0], p2[0],p3[0]), (names),fontsize=40)
 ax.axhline(y=1,color='k',ls='dotted')
 
-plt.ylabel("Speed up compared to 16-core CPU",fontsize=35)
+plt.ylabel("Speedup compared to 16-core CPU",fontsize=40)
 plt.show()
 plt.close()
 

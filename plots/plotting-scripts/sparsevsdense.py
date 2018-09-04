@@ -61,11 +61,11 @@ p1 = ax.bar(ind,char1sparsegpu, width, color='g',hatch='//')
 p2 = ax.bar(ind+width,char1densegpu, width, color='g',alpha=0.55)
 
 ax.set_xticks(ind + (0.5*width))
-ax.set_xticklabels(bmklist,rotation=28,fontsize=28)
+ax.set_xticklabels(bmklist,rotation=28,fontsize=35)
 ax.set_yticks(np.arange(1,5,step=1))
 
-ax.legend((p1[0], p2[0]), ('Sparse','Dense'),fontsize=35)
+ax.legend((p1[0], p2[0]), ('Sparse','Dense'),fontsize=40)
 ax.axhline(y=1,color='k',ls='dotted')
-plt.ylabel("Speed up compared to 16-core CPU",fontsize=35)
+plt.ylabel("Speedup compared to 16-core CPU",fontsize=40)
 plt.show()
 

@@ -121,10 +121,10 @@ p6 = ax.bar(ind+2*width,offsetsort, width,bottom=offsetnosort, color='#888888',a
 # p5 = ax.bar(ind+4*width,offsetnosort, width, color='m')
 # p6 = ax.bar(ind+5*width,char1nosort, width, color='c')
 
-#ax.set_title('Speed-up in Execution Time',fontsize=15)
+#ax.set_title('Speedup in execution time',fontsize=15)
 
 ax.set_xticks(ind + width)
-ax.set_xticklabels(bmklist,rotation=28,fontsize=28)
+ax.set_xticklabels(bmklist,rotation=28,fontsize=35)
 
 legend1=plt.legend((p1[0], p4[0]), (names),title=names2[0],fontsize=30,loc=(0.02,0.70))
 legend2=plt.legend((p2[0], p5[0]), (names),title=names2[1],fontsize=30,loc=(0.24,0.70)) 
@@ -141,7 +141,7 @@ plt.gca().add_artist(legend1)
 plt.gca().add_artist(legend2)
 plt.gca().add_artist(legend3)
 
-plt.ylabel("Speed up compared to 16-core CPU",fontsize=35)
+plt.ylabel("Speedup compared to 16-core CPU",fontsize=40)
 plt.show()
 plt.close()
 
