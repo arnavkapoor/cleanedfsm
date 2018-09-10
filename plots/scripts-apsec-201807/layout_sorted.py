@@ -55,7 +55,7 @@ for filename in neededfiles:
     
 
 
-    cpuchar1 = (df1['Total CPU'].values.tolist()[1])
+    cpuchar1 = (df7['Total Time'].values.tolist()[1])
     cpumaxpadded = (df2['Total CPU'].values.tolist()[1])
     cpuoffset = (df3['Total CPU'].values.tolist()[1])
     #cpuchar4 = (df4['Total CPU'].values.tolist()[3])
