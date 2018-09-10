@@ -9,9 +9,14 @@ import matplotlib as mplt
 import itertools
 import matplotlib.pyplot as plt 
 from matplotlib import rcParams
+
+mplt.rcParams['ps.useafm'] = True
+mplt.rcParams['pdf.use14corefonts'] = True
+mplt.rcParams['text.usetex'] = True
+
 rcParams.update({'figure.autolayout': True})
 neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','dns.test','h323.test','halflife2-deathmatch.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
-plt.rc('legend',**{'fontsize':30})
+plt.rc('legend',**{'fontsize':40})
 
 names2 = ['padded','padded-transposed','with-offsets']
 
@@ -141,11 +146,11 @@ p6 = ax.bar(ind+2*width,offsetsort, width,bottom=offsetnosort, color='#888888',a
 #ax.set_title('Speed-up in Execution Time',fontsize=15)
 
 ax.set_xticks(ind + width)
-ax.set_xticklabels(bmklist,rotation=28,fontsize=28)
+ax.set_xticklabels(bmklist,rotation=28,fontsize=35)
 
-legend1=plt.legend((p1[0], p4[0]), (names),title=names2[0],fontsize=30,loc=(0.02,0.70))
-legend2=plt.legend((p2[0], p5[0]), (names),title=names2[1],fontsize=30,loc=(0.24,0.70)) 
-legend3=plt.legend((p3[0],p6[0]), (names),fontsize=30,title=names2[2],loc=(0.56,0.70))
+legend1=plt.legend((p1[0], p4[0]), (names),title=names2[0],fontsize=40,loc=(0.02,0.70))
+legend2=plt.legend((p2[0], p5[0]), (names),title=names2[1],fontsize=40,loc=(0.25,0.70)) 
+legend3=plt.legend((p3[0],p6[0]), (names),fontsize=40,title=names2[2],loc=(0.49,0.70))
 
 legend1.set_title(names2[0],prop={'size':35})
 legend2.set_title(names2[1],prop={'size':35})
@@ -158,7 +163,7 @@ plt.gca().add_artist(legend1)
 plt.gca().add_artist(legend2)
 plt.gca().add_artist(legend3)
 
-plt.ylabel("Speed up compared to 16-core CPU",fontsize=35)
+plt.ylabel("Speed up compared to 16-core CPU",fontsize=40)
 plt.show()
 plt.close()
 

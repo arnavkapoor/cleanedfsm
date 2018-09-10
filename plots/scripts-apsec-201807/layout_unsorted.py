@@ -12,8 +12,12 @@ from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','dns.test','h323.test','halflife2-deathmatch.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
 names = ['padded','padded-transposed','with-offsets']
-mplt.rc('xtick', labelsize=30) 
-mplt.rc('ytick', labelsize=30) 
+mplt.rc('xtick', labelsize=40) 
+mplt.rc('ytick', labelsize=40) 
+
+mplt.rcParams['ps.useafm'] = True
+mplt.rcParams['pdf.use14corefonts'] = True
+mplt.rcParams['text.usetex'] = True
 
 #maxpadded = []
 #offset = []
@@ -30,7 +34,7 @@ for filename in neededfiles:
     df1 = pd.read_csv('./char1unsorted/'+filename+'.csv')
     df2 = pd.read_csv('./maxpaddingunsorted/'+filename+'.csv')
     df3 = pd.read_csv('./offsetunsorted/'+filename+'.csv')
-    df4 = pd.read_csv('./individualcsvcpusorted/'+filename+'.csv')
+    df4 = pd.read_csv('./individualcsvcpusortedminimum/'+filename+'.csv')
     
     cpuchar1 = (df4['Total Time'].values.tolist()[1])
     cpumaxpadded = (df2['Total CPU'].values.tolist()[1])
@@ -96,11 +100,11 @@ p3 = ax.bar(ind+2*width,offsetnosort, width, color='#888888',hatch='//')
 ax.set_yticks(np.arange(1,9,step=1))
 
 ax.set_xticks(ind + width)
-ax.set_xticklabels(bmklist,rotation=28,fontsize=28)
-ax.legend((p1[0], p2[0],p3[0]), (names),fontsize=35)
+ax.set_xticklabels(bmklist,rotation=28,fontsize=35)
+ax.legend((p1[0], p2[0],p3[0]), (names),fontsize=40)
 ax.axhline(y=1,color='k',ls='dotted')
 
-plt.ylabel("Speed up compared to 16-core CPU",fontsize=35)
+plt.ylabel("Speed up compared to 16-core CPU",fontsize=40)
 plt.show()
 plt.close()
 
