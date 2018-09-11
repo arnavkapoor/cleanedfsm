@@ -26,7 +26,7 @@ for folder, sub_folders, files in os.walk(path):
             if(value_taken == "0"):
                 file.writerow([special_file[2],special_file[0],special_file[1],time[0]])
             else:
-                file.writerow([special_file[2],special_file[0],special_file[1],time[count//2]])
+                file.writerow([special_file[2],special_file[0],special_file[1],time[count//2+1]])
                 
 file2 = csv.writer(open('gpuresultsnetwork.csv', 'w'))
 
@@ -56,4 +56,4 @@ for folder, sub_folders, files in os.walk(path2):
             if(value_taken == "0"):
                 file2.writerow([special_file[1],special_file[0],exectime[0],totaltime[0]])
             else:    
-                file2.writerow([special_file[1],special_file[0],exectime[count//2],totaltime[count//2]])
+                file2.writerow([special_file[1],special_file[0],exectime[count//2+1],totaltime[count//2+1]])
