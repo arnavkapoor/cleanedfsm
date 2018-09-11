@@ -10,13 +10,21 @@ import itertools
 import matplotlib.pyplot as plt 
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
+option = sys.argv[2]
 
 mplt.rcParams['ps.useafm'] = True
 mplt.rcParams['pdf.use14corefonts'] = True
 mplt.rcParams['text.usetex'] = True
 
-neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','halflife2-deathmatch.test','dns.test','h323.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
+if(option == "keysight"):
+    pos = 0
+    neededfiles = ['keysight.test']
 
+if(option == "network"):
+    pos = 1
+    neededfiles = ['aim.test','battlefield2.test','counterstrike-source.test','halflife2-deathmatch.test','dns.test','h323.test','hotline.test','ntp.test','rtp.test','ssl.test','tsp.test','yahoo.test']
+
+print(neededfiles,pos)
 plt.rc('legend',**{'fontsize':30})
 
 names2 = ['padded','padded-transposed','with-offsets']
@@ -34,9 +42,11 @@ offsetsort = []
 char1sort = []
 
 basefolder = sys.argv[1] + '/'
+
 bmklist = []
 
 for filename in neededfiles:
+    
     df1 = pd.read_csv(basefolder+'unsorted/'+'padded-transposed/'+filename+'.csv')
     df2 = pd.read_csv(basefolder+'unsorted/'+'padded/'+filename+'.csv')
     df3 = pd.read_csv(basefolder+'unsorted/'+'with-offsets/'+filename+'.csv')
@@ -50,9 +60,9 @@ for filename in neededfiles:
 
 
   #--- unsorted part--- #
-    cpuchar1 = (df1['Total CPU'].values.tolist()[1])
-    cpumaxpadded = (df2['Total CPU'].values.tolist()[1])
-    cpuoffset = (df3['Total CPU'].values.tolist()[1])
+    cpuchar1 = (df1['Total CPU'].values.tolist()[pos])
+    cpumaxpadded = (df2['Total CPU'].values.tolist()[pos])
+    cpuoffset = (df3['Total CPU'].values.tolist()[pos])
    
     gpuchar1 = (df1['Execution GPU'].values.tolist()[0])   
     gpumaxpadded = (df2['Execution GPU'].values.tolist()[0])   
@@ -64,9 +74,9 @@ for filename in neededfiles:
   
 
   #--- sorted part--- #
-    cpuchar1 = (df1['Total CPU'].values.tolist()[1]) #same cpu as unsorted as no changes to cpu speeds due to sorting in smaller test-cases
-    cpumaxpadded = (df5['Total CPU'].values.tolist()[1])
-    cpuoffset = (df3['Total CPU'].values.tolist()[1])
+    cpuchar1 = (df1['Total CPU'].values.tolist()[pos]) #same cpu as unsorted as no changes to cpu speeds due to sorting in smaller test-cases
+    cpumaxpadded = (df5['Total CPU'].values.tolist()[pos])
+    cpuoffset = (df3['Total CPU'].values.tolist()[pos])
    
     gpuchar1 = (df4['Execution GPU'].values.tolist()[0])   
     gpumaxpadded = (df5['Execution GPU'].values.tolist()[0])   
@@ -126,22 +136,24 @@ p6 = ax.bar(ind+2*width,offsetsort, width,bottom=offsetnosort, color='#888888',a
 ax.set_xticks(ind + width)
 ax.set_xticklabels(bmklist,rotation=28,fontsize=35)
 
-legend1=plt.legend((p1[0], p4[0]), (names),title=names2[0],fontsize=30,loc=(0.02,0.70))
-legend2=plt.legend((p2[0], p5[0]), (names),title=names2[1],fontsize=30,loc=(0.24,0.70)) 
-legend3=plt.legend((p3[0],p6[0]), (names),fontsize=30,title=names2[2],loc=(0.56,0.70))
+if(option == "network"):
+    legend1=plt.legend((p1[0], p4[0]), (names),title=names2[0],fontsize=30,loc=(0.02,0.70))
+    legend2=plt.legend((p2[0], p5[0]), (names),title=names2[1],fontsize=30,loc=(0.24,0.70)) 
+    legend3=plt.legend((p3[0],p6[0]), (names),fontsize=30,title=names2[2],loc=(0.56,0.70))
 
-legend1.set_title(names2[0],prop={'size':35})
-legend2.set_title(names2[1],prop={'size':35})
-legend3.set_title(names2[2],prop={'size':35})
-ax.axhline(y=1,color='k',ls='dotted')
-ax.set_yticks(np.arange(1,13,step=1))
+    legend1.set_title(names2[0],prop={'size':35})
+    legend2.set_title(names2[1],prop={'size':35})
+    legend3.set_title(names2[2],prop={'size':35})
+    ax.axhline(y=1,color='k',ls='dotted')
+    ax.set_yticks(np.arange(1,13,step=1))
 
 
-plt.gca().add_artist(legend1)
-plt.gca().add_artist(legend2)
-plt.gca().add_artist(legend3)
+    plt.gca().add_artist(legend1)
+    plt.gca().add_artist(legend2)
+    plt.gca().add_artist(legend3)
 
-plt.ylabel("Speedup compared to 16-core CPU",fontsize=40)
+    plt.ylabel("Speedup compared to 16-core CPU",fontsize=40)
+
 plt.show()
 plt.close()
 
