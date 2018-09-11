@@ -6,9 +6,9 @@ import matplotlib as mplt
 import itertools
 import matplotlib.pyplot as plt 
 
-mplt.rcParams['ps.useafm'] = True
-mplt.rcParams['pdf.use14corefonts'] = True
-mplt.rcParams['text.usetex'] = True
+# mplt.rcParams['ps.useafm'] = True
+# mplt.rcParams['pdf.use14corefonts'] = True
+# mplt.rcParams['text.usetex'] = True
 
 mplt.rc('xtick', labelsize=30) 
 mplt.rc('ytick', labelsize=30) 
@@ -24,6 +24,7 @@ fig, ax = plt.subplots()
 ax.set_xscale('log', basex=2,subsx=(2,3,4,5,6,7,8,9,10))  
 
 path = sys.argv[1]
+option = sys.argv[2]
 
 for folder, sub_folders, files in os.walk(path):
     for special_file in files:
@@ -64,6 +65,9 @@ for folder, sub_folders, files in os.walk(path):
         print(len(executiongpu), bmk)
         for i in range(0,len(executiongpu)):
             executiongpu[i] = totalcpu16[i]/executiongpu[i]
+            if(testcases[i] == 36027 ):
+                ycord = executiongpu[i]
+
         print(executiongpu[0],bmk)    
         total+=executiongpu[0]
         
@@ -75,6 +79,10 @@ for folder, sub_folders, files in os.walk(path):
 
 
 print(total/12)
+
+if(option == "keysight"):
+    ycord = round(ycord,2)
+    ax.annotate("(36027, "+ str(ycord) + ")" , xy=(36027,ycord), textcoords='data',fontsize=30,arrowprops=dict(facecolor='black', shrink=0.05)) 
 
 #plt.ticklabel_format(style = 'plain',labelsize=20)
 plt.ylabel('Speedup compared to 16-core CPU',fontsize=40)
