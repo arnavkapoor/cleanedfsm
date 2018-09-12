@@ -11,10 +11,12 @@ for i in range(0,len(fsmdata)):
     fsm.append(fsmdata[i].strip().split())
 
 namefile=(sys.argv[1].rsplit('/',1)[1])
-filewrite= open(os.path.join("./prefix_list",namefile),"w")
+outputdir=sys.argv[2]
+
+filewrite= open(os.path.join(outputdir+"/prefix_list",namefile),"w")
 #filewrite1= open(os.path.join('/home/arnav/fsm/tests/opensrcexpanded',namefile),"w")
 
-print(namefile)
+# print(namefile)
 userinput = []
 currstate = []
 nextstate = []
@@ -104,7 +106,7 @@ for i in range(x-1,-1,-1):
 # filewrite1.write(".p "+str(len(userinput))+ "\n")
 # filewrite1.write(".b 10" + "\n")
 
-print(len(userinput),len(currstate),len(nextstate),len(useroutput))
+# print(len(userinput),len(currstate),len(nextstate),len(useroutput))
 
 
 q = deque()

@@ -4,10 +4,12 @@ import os
 
 with open(sys.argv[1], 'r') as myfile1: # the fsm file
     fsmdata=myfile1.readlines()
+
 namefile=(sys.argv[1].rsplit('/',1)[1])
+outputdir=sys.argv[2]
 fsm=[]
 
-filewrite = open(os.path.join('./transition_pairs',namefile),"w")
+filewrite = open(os.path.join(outputdir+'/transition_pairs',namefile),"w")
 
 
 for i in range(0,len(fsmdata)):
@@ -83,7 +85,7 @@ for key,value in count.items():
     total += value[0]*value[1]
 
 filewrite.write(".p "+str(total)+'\n')
-print(namefile)
+#print(namefile)
 for key,value in inout.items():
     count[key] = (len(value[0]),len(value[1]))
     for item_in in value[0]:

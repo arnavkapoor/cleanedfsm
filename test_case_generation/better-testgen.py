@@ -5,6 +5,8 @@ from collections import deque
 prefixdict = {}
 prefixlist = []
 
+outputdir=sys.argv[3]
+
 with open(sys.argv[2],'r') as prefixfile:
     prefixdata=prefixfile.readlines()
 
@@ -18,7 +20,7 @@ for elements in prefixlist:
         prefixdict[elements[0]]=""
 
 namefile=(sys.argv[1].rsplit('/',1)[1])
-filewrite= open(os.path.join('./transition_pair_tests',namefile),"w")
+filewrite= open(os.path.join(outputdir+'/transition_pair_tests',namefile),"w")
 count = 1
 with open(sys.argv[1], 'r') as myfile1: # the fsm file
     for line in myfile1:
