@@ -6,9 +6,9 @@ import matplotlib as mplt
 import itertools
 import matplotlib.pyplot as plt 
 
-# mplt.rcParams['ps.useafm'] = True
-# mplt.rcParams['pdf.use14corefonts'] = True
-# mplt.rcParams['text.usetex'] = True
+mplt.rcParams['ps.useafm'] = True
+mplt.rcParams['pdf.use14corefonts'] = True
+mplt.rcParams['text.usetex'] = True
 
 mplt.rc('xtick', labelsize=30) 
 mplt.rc('ytick', labelsize=30) 
