@@ -25,7 +25,7 @@ totalgpu = []
 
 
 for filename in neededfiles:
-    df1 = pd.read_csv(basepath+'sparseresults/'+filename+'.csv')
+    df1 = pd.read_csv(basepath+'sparseresultsmedianvalues/'+filename+'.csv')
     df2 = pd.read_csv(basepath+'denseresults/unsorted/padded/'+filename+'.csv')
     
     sparsecpuchar1_16 = (df1['Total CPU'].values.tolist()[1])
