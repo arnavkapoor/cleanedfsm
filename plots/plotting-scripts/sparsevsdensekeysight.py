@@ -70,7 +70,7 @@ fig,ax = plt.subplots()
 ind = np.arange(2)
 width=0.25
 
-p1 = ax.bar(ind,sparse, width, color='g',hatch='//')
+p1 = ax.bar(ind,sparse, width, color='g')
 p2 = ax.bar(ind+width,dense, width, color='g',alpha=0.55)
 
 ax.set_xticks(ind + (0.5*width))

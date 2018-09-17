@@ -17,8 +17,7 @@ for folder, sub_folders, files in os.walk(path):
                         d[line[1]] += 1
 
         filename=file_path.rsplit('/')[-1]
-        file = csv.writer(open(placetosave + filename + ".csv", 'w'))
+        file = csv.writer(open(placetosave + "/" + filename + ".csv", 'w'))
         file.writerow(['State', 'Transitions', 'Percentage Transitions'])
         for key,values in d.items():
            file.writerow([key,values,values/totalnetwork])
-           
